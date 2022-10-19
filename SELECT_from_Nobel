@@ -45,6 +45,26 @@
 
     SELECT yr, subject, winner FROM nobel WHERE subject = 'medicine' AND  yr <1910 UNION SELECT yr,subject,winner FROM nobel WHERE subject = 'Literature' AND yr >= 2004;
 
-11.
 
-    
+--> HARDER QUESTIONS:
+
+
+11. Non - ASCII Characters;
+
+
+    SELECT * FROM nobel WHERE winner LIKE 'PETER GR%';
+
+
+12. 
+
+    SELECT * from nobel WHERE winner = 'Eugene O''Neill';
+
+
+13.     
+
+    SELECT winner, yr, subject FROM nobel WHERE winner LIKE 'Sir%' ORDER BY 2 DESC,1;
+
+
+14. 
+
+    SELECT winner, subject FROM nobel WHERE yr=1984 ORDER BY subject IN('Chemistry','Physics'), subject, winner;
