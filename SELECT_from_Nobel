@@ -5,4 +5,9 @@
 
 2. 
 
-    
+    SELECT winner FROM nobel WHERE yr = 1962 AND subject = 'literature';
+
+
+3. 
+
+    SELECT yr, subject FROM nobel WHERE winner = 'Albert Einstein';
