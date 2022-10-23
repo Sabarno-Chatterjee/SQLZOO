@@ -23,3 +23,16 @@ SUB - QUERIES
 4. 
 
     SELECT name, population FROM world WHERE population > (SELECT population FROM world WHERE name ='United Kingdom') AND population < (SELECT population FROM world WHERE name ='Germany'); 
+
+
+5. 
+
+    SELECT name, CONCAT(ROUND(population/(SELECT population FROM world
+                          WHERE name = 'Germany')*100,0),'%')
+             FROM world WHERE continent = 'Europe'
+
+             OR
+
+       SELECT name, CONCAT(FLOOR(population/(SELECT population FROM world
+                          WHERE name = 'Germany')*100),'%')
+             FROM world WHERE continent = 'Europe'
