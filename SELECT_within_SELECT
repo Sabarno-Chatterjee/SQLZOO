@@ -36,3 +36,15 @@ SUB - QUERIES
        SELECT name, CONCAT(FLOOR(population/(SELECT population FROM world
                           WHERE name = 'Germany')*100),'%')
              FROM world WHERE continent = 'Europe'
+
+
+6. 
+
+
+    SELECT name FROM world WHERE gdp > ALL(SELECT gdp FROM world WHERE gdp > 0 AND continent = 'Europe');
+
+
+7. 
+
+
+    
